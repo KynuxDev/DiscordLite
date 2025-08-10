@@ -1,0 +1,374 @@
+# DiscordLite Plugin Configuration
+# Version: 0.1.0
+
+# Plugin Genel Ayarları
+general:
+  debug_mode: false
+  language: "tr" # tr, en
+  auto_backup: true
+  backup_interval: 86400 # 24 saat (saniye)
+  max_backups: 7
+
+# Discord Bot Ayarları
+discord:
+  bot_token: "BOT_TOKEN_BURAYA"
+  guild_id: "DISCORD_SUNUCU_ID"
+  
+  # Kanal Ayarları
+  channels:
+    log_channel_id: "LOG_KANAL_ID"
+    admin_channel_id: "ADMIN_KANAL_ID" # Acil durum bildirimleri için
+    security_channel_id: "SECURITY_KANAL_ID" # Güvenlik logları için
+    audit_channel_id: "AUDIT_KANAL_ID" # Audit logları için
+    verification_channel_id: "VERIFICATION_KANAL_ID" # Hesap doğrulama kanalı için
+  
+  # Bot Aktivite Ayarları
+  activity:
+    enabled: true
+    type: "PLAYING" # PLAYING, WATCHING, LISTENING, STREAMING
+    message: "DiscordLite Security v1.0"
+    update_interval: 300 # 5 dakika
+  
+  # Slash Komut Ayarları (YENİ SİSTEMDE KULLANILMIYOR)
+  slash_commands:
+    enabled: false # Artık sadece Minecraft tabanlı sistem kullanılıyor
+    global: false
+    auto_register: false
+  
+  # Kalıcı Doğrulama Embed Ayarları
+  persistent_verification:
+    enabled: true # Kalıcı doğrulama embed sistemi aktif mi
+    auto_update_on_restart: true # Sunucu restart'ında embed'i güncelle
+    button_label: "🔐 Kodunu Gir" # Doğrulama butonu metni
+    refresh_interval: 300 # Embed'i yenileme sıklığı (saniye, 0 = kapalı)
+
+# Veritabanı Ayarları
+database:
+  type: "sqlite" # sqlite, mysql, yaml
+  
+  # Connection Pool Ayarları
+  connection_pool:
+    min_idle: 2
+    max_pool_size: 10
+    connection_timeout: 30000 # 30 saniye
+    idle_timeout: 600000 # 10 dakika
+    max_lifetime: 1800000 # 30 dakika
+  
+  mysql:
+    host: "localhost"
+    port: 3306
+    database: "discordlite"
+    username: "kullanici"
+    password: "sifre"
+    ssl: false
+    charset: "utf8mb4"
+    timezone: "Europe/Istanbul"
+    
+  sqlite:
+    file: "discordlite.db"
+    journal_mode: "WAL" # WAL, DELETE, TRUNCATE
+    synchronous: "NORMAL" # OFF, NORMAL, FULL
+    
+  yaml:
+    file: "playerdata.yml"
+    backup_on_save: true
+
+# Güvenlik Ayarları
+security:
+  # 2FA Ayarları
+  twofa:
+    verification_timeout: 300 # 5 dakika (saniye)
+    max_verification_attempts: 3
+    auto_kick_on_timeout: true
+    freeze_player_on_verification: true
+    allow_movement_while_frozen: false
+  
+  # IP Ban Ayarları
+  ip_ban:
+    default_duration: -1 # Kalıcı (-1) veya saniye
+    max_failed_attempts: 5 # IP ban öncesi başarısız deneme sayısı
+    failed_attempt_window: 3600 # 1 saat (saniye)
+    whitelist_enabled: false
+    whitelisted_ips:
+      - "127.0.0.1"
+      - "::1"
+  
+  # Otomatik Güvenlik Önlemleri
+  auto_security:
+    enabled: true
+    risk_threshold: 80 # 0-100 arası risk skoru
+    ban_duration_low: 1800 # 30 dakika
+    ban_duration_medium: 3600 # 1 saat
+    ban_duration_high: 86400 # 24 saat
+    
+  # Rate Limiting
+  rate_limiting:
+    enabled: true
+    max_requests_per_minute: 10
+    max_requests_per_hour: 100
+    ban_on_exceed: true
+    ban_duration: 3600 # 1 saat
+
+# Logging Ayarları
+logging:
+  # Log Seviyeleri
+  level: "INFO" # DEBUG, INFO, WARN, ERROR
+  
+  # Log Kanalı Ayarları
+  discord_logging:
+    enabled: true
+    rate_limit: 30 # Dakika başına maksimum log mesajı
+    queue_size: 100
+    batch_size: 5
+    emergency_threshold: 5 # Kritik event sayısı
+    
+  # Dosya Logging
+  file_logging:
+    enabled: true
+    file_path: "logs/discordlite.log"
+    max_file_size: "10MB"
+    max_files: 10
+    
+  # Security Log Ayarları
+  security_logs:
+    enabled: true
+    retention_days: 30 # Eski logları temizle
+    detailed_logging: true
+    include_stack_traces: false
+
+# Plugin Özellikleri
+features:
+  # 2FA Özellikleri
+  twofa:
+    required_for_ops: true
+    required_for_permissions: []
+    bypass_permissions: ["discordlite.bypass.twofa"]
+    
+  # Rol Senkronizasyonu
+  role_sync:
+    enabled: true
+    auto_sync: true
+    sync_interval: 300 # 5 dakika
+    sync_on_join: true
+    sync_on_permission_change: true
+    reverse_sync: false # Discord -> Minecraft yönünde senkronizasyon
+    
+  # Hesap Bağlama
+  linking:
+    cooldown_enabled: true
+    cooldown_duration: 60 # 1 dakika
+    max_attempts_per_day: 5
+    require_confirmation: true
+    allow_relinking: true
+    
+  # Bildirimler
+  notifications:
+    join_notifications: true
+    leave_notifications: true
+    link_notifications: true
+    admin_notifications: true
+    security_notifications: true
+
+# Mesaj Ayarları
+messages:
+  # Temel Mesajlar
+  verification_required: "&eDiscord hesabınızı kontrol edin ve giriş için onaylayın!"
+  verification_timeout: "&cDoğrulama süresi doldu. Lütfen tekrar deneyin."
+  verification_success: "&aGiriş onaylandı! Hoş geldiniz."
+  verification_failed: "&cGiriş onaylanamadı. Tekrar deneyin."
+  
+  # Hesap Bağlama
+  account_not_linked: "&c2FA kullanmak için önce Discord hesabınızı eşleyin!"
+  already_linked: "&cBu hesap zaten eşlenmiş!"
+  link_success: "&aDiscord hesabınız başarıyla eşlendi!"
+  unlink_success: "&aHesap eşlemesi başarıyla kaldırıldı."
+  link_cooldown: "&cÇok hızlı! {time} saniye bekleyin."
+  
+  # Yeni Doğrulama Sistemi
+  verification_code_generated: "&aDoğrulama kodunuz: &f&l{code}"
+  verification_check_discord: "&eDiscord kanalını kontrol edin ve butona tıklayın!"
+  verification_expired: "&cDoğrulama kodunuz süresi doldu!"
+  verification_invalid_code: "&cGeçersiz doğrulama kodu!"
+  
+  # 2FA Mesajları
+  twofa_enabled: "&a2FA başarıyla açıldı!"
+  twofa_disabled: "&c2FA kapatıldı."
+  twofa_required: "&c2FA zorunludur! Önce Discord hesabınızı eşleyin."
+  
+  # Hata Mesajları
+  no_permission: "&cBu komutu kullanma yetkiniz yok!"
+  player_not_found: "&cOyuncu bulunamadı!"
+  invalid_verification: "&cGeçersiz doğrulama kodu!"
+  rate_limited: "&cÇok fazla istek! Lütfen bekleyin."
+  maintenance_mode: "&cSistem bakımda. Lütfen daha sonra tekrar deneyin."
+  
+  # Başarı Mesajları
+  command_success: "&aKomut başarıyla çalıştırıldı!"
+  config_reloaded: "&aKonfigürasyon yeniden yüklendi!"
+  database_connected: "&aVeritabanı bağlantısı başarılı!"
+
+# Discord Embed Ayarları
+discord_embeds:
+  # Doğrulama Embed'i (2FA için)
+  verification:
+    title: "🔐 Minecraft Giriş Onayı"
+    description: "Minecraft sunucusuna giriş yapmak istediğinizi onaylayın."
+    color: "#00ff00"
+    footer: "DiscordLite Security System"
+    thumbnail: true
+    timestamp: true
+    
+  # Hesap Doğrulama Embed'i (Yeni sistem)
+  account_verification:
+    title: "🔐 Yeni Hesap Doğrulama Talebi"
+    description: "Bir oyuncu Discord hesabını eşlemek istiyor."
+    color: "#ff9900"
+    footer: "DiscordLite Account Verification"
+    thumbnail: false
+    timestamp: true
+    
+  # Kalıcı Doğrulama Embed'i (Yeni sistem)
+  persistent_verification:
+    title: "🔐 DiscordLite Hesap Doğrulama"
+    description: |
+      **Minecraft hesabınızı Discord ile eşleştirmek için:**
+      
+      1️⃣ Minecraft sunucusuna giriş yapın
+      2️⃣ `/verify` komutunu kullanın
+      3️⃣ Aldığınız kodu aşağıdaki butona tıklayarak girin
+      
+      ⚠️ **Eşleştirme işlemi 5 dakika geçerlidir!**
+    color: "#00ff88"
+    footer: "DiscordLite Persistent Verification System"
+    thumbnail: true
+    timestamp: true
+    
+  # Güvenlik Log Embed'i
+  security_log:
+    title: "🛡️ Güvenlik Logu"
+    color: "#ffaa00"
+    footer: "DiscordLite Security"
+    timestamp: true
+    
+  # Güvenlik Uyarısı Embed'i
+  security_alert:
+    title: "⚠️ GÜVENLİK UYARISI"
+    color: "#ff0000"
+    footer: "DiscordLite Security Alert"
+    timestamp: true
+    ping_roles: ["ADMIN_ROL_ID"]
+    
+  # Sistem Log Embed'i
+  system_log:
+    title: "⚙️ Sistem Logu"
+    color: "#0099ff"
+    footer: "DiscordLite System"
+    timestamp: true
+    
+  # Audit Log Embed'i
+  audit_log:
+    title: "📋 Audit Logu"
+    color: "#9900ff"
+    footer: "DiscordLite Audit"
+    timestamp: true
+
+# Permission - Rol Eşlemeleri
+role_mappings:
+  # Yönetici Rolleri
+  - permission: "discordlite.admin"
+    discord_role_id: "ADMIN_ROL_ID"
+    
+  - permission: "essentials.admin"
+    discord_role_id: "ADMIN_ROL_ID"
+    
+  # Moderatör Rolleri
+  - permission: "group.moderator"
+    discord_role_id: "MODERATOR_ROL_ID"
+    
+  # VIP Rolleri
+  - permission: "group.vip"
+    discord_role_id: "VIP_ROL_ID"
+    
+  # Builder Rolleri
+  - permission: "group.builder"
+    discord_role_id: "BUILDER_ROL_ID"
+
+# Webhook Ayarları (İsteğe bağlı)
+webhooks:
+  enabled: false
+  security_webhook: "WEBHOOK_URL"
+  audit_webhook: "WEBHOOK_URL"
+  
+# API Ayarları (Gelecek özellikler için)
+api:
+  enabled: false
+  port: 8080
+  host: "localhost"
+  auth_required: true
+  api_key: "API_KEY_BURAYA"
+
+# Performans Ayarları
+performance:
+  # Thread Pool Ayarları
+  thread_pool:
+    core_size: 2
+    max_size: 10
+    queue_capacity: 100
+    keep_alive: 60 # saniye
+    
+  # Cache Ayarları
+  cache:
+    enabled: true
+    max_size: 1000
+    expire_after_write: 300 # 5 dakika
+    expire_after_access: 600 # 10 dakika
+    
+  # Cleanup Ayarları
+  cleanup:
+    interval: 3600 # 1 saat
+    max_old_logs: 1000
+    max_expired_verifications: 100
+
+# Gelişmiş Güvenlik Ayarları
+advanced_security:
+  # Brute Force Koruması
+  brute_force_protection:
+    enabled: true
+    max_attempts: 5
+    window_minutes: 15
+    ban_duration: 3600 # 1 saat
+    
+  # Anomali Tespiti
+  anomaly_detection:
+    enabled: true
+    unusual_login_times: true
+    multiple_ip_detection: true
+    rapid_action_detection: true
+    
+  # Honeypot
+  honeypot:
+    enabled: false
+    fake_endpoints: ["admin", "login", "api"]
+    
+  # Encryption
+  encryption:
+    algorithm: "AES-256"
+    salt_length: 16
+    iterations: 10000
+
+# Backup Ayarları
+backup:
+  enabled: true
+  automatic: true
+  interval: 86400 # 24 saat
+  max_backups: 7
+  compression: true
+  include_logs: false
+  backup_path: "backups/"
+  
+# Maintenance Ayarları
+maintenance:
+  enabled: false
+  message: "&cSunucu bakımda. Lütfen daha sonra tekrar deneyin."
+  allowed_players: []
+  bypass_permission: "discordlite.maintenance.bypass"

@@ -1,0 +1,168 @@
+name: DiscordLite
+version: '0.1.0'
+main: kynux.cloud.discordLite.DiscordLite
+api-version: '1.20'
+load: STARTUP
+authors: [ kynux ]
+website: https://kynux.cloud
+description: Minecraft tabanlı Discord hesap eşleme ve 2FA güvenlik sistemi
+
+commands:
+  discordlite:
+    description: Ana DiscordLite komutu
+    usage: /<command> <alt komut>
+    aliases: [dl]
+  
+  verify:
+    description: Discord hesabınızı doğrulayın
+    usage: /verify
+    permission: discordlite.verify
+
+permissions:
+  # Ana permission grupları
+  discordlite.*:
+    description: Tüm DiscordLite permission'larına erişim
+    default: false
+    children:
+      - discordlite.admin.*
+      - discordlite.use.*
+      - discordlite.verify.*
+      - discordlite.2fa.*
+  
+  # Admin permission'ları
+  discordlite.admin:
+    description: Tüm admin komutlarına erişim
+    default: op
+    children:
+      - discordlite.admin.*
+  
+  discordlite.admin.*:
+    description: Tüm admin işlemlerine erişim
+    default: false
+    children:
+      - discordlite.admin.unlink
+      - discordlite.admin.reset
+      - discordlite.admin.ban
+      - discordlite.admin.unban
+      - discordlite.admin.info
+      - discordlite.admin.logs
+      - discordlite.admin.reload
+      - discordlite.admin.bypass
+  
+  discordlite.admin.unlink:
+    description: Oyuncu eşlemelerini kaldırabilme
+    default: op
+  
+  discordlite.admin.reset:
+    description: Oyuncu verilerini sıfırlayabilme
+    default: op
+  
+  discordlite.admin.ban:
+    description: IP banlayabilme
+    default: op
+  
+  discordlite.admin.unban:
+    description: IP ban kaldırabilme
+    default: op
+  
+  discordlite.admin.info:
+    description: Oyuncu bilgilerini görüntüleyebilme
+    default: op
+  
+  discordlite.admin.logs:
+    description: Güvenlik loglarını görüntüleyebilme
+    default: op
+  
+  discordlite.admin.reload:
+    description: Plugin konfigürasyonunu yeniden yükleyebilme
+    default: op
+  
+  discordlite.admin.bypass:
+    description: 2FA ve güvenlik kontrollerini atlayabilme
+    default: op
+  
+  # Kullanıcı permission'ları
+  discordlite.use:
+    description: Temel komutları kullanma
+    default: true
+    children:
+      - discordlite.use.*
+  
+  discordlite.use.*:
+    description: Tüm temel işlemlere erişim
+    default: true
+    children:
+      - discordlite.use.status
+      - discordlite.use.help
+  
+  discordlite.use.status:
+    description: Hesap durumunu görüntüleyebilme
+    default: true
+  
+  discordlite.use.help:
+    description: Yardım komutlarını kullanabilme
+    default: true
+  
+  # Doğrulama permission'ları (YENİ SİSTEM)
+  discordlite.verify:
+    description: Discord hesap doğrulama yapabilme
+    default: true
+    children:
+      - discordlite.verify.*
+  
+  discordlite.verify.*:
+    description: Tüm doğrulama işlemlerine erişim
+    default: true
+    children:
+      - discordlite.verify.create
+      - discordlite.verify.use
+  
+  discordlite.verify.create:
+    description: Yeni doğrulama kodu oluşturabilme
+    default: true
+  
+  discordlite.verify.use:
+    description: Doğrulama sistemi kullanabilme
+    default: true
+  
+  # 2FA permission'ları
+  discordlite.2fa:
+    description: 2FA ayarlarını değiştirebilme
+    default: true
+    children:
+      - discordlite.2fa.*
+  
+  discordlite.2fa.*:
+    description: Tüm 2FA işlemlerine erişim
+    default: true
+    children:
+      - discordlite.2fa.toggle
+      - discordlite.2fa.verify
+  
+  discordlite.2fa.toggle:
+    description: 2FA'yı açıp kapatabilme
+    default: true
+  
+  discordlite.2fa.verify:
+    description: 2FA doğrulaması yapabilme
+    default: true
+  
+  # Özel permission'lar
+  discordlite.vip:
+    description: VIP kullanıcı avantajları
+    default: false
+  
+  discordlite.premium:
+    description: Premium kullanıcı avantajları
+    default: false
+  
+  discordlite.staff:
+    description: Staff üyesi avantajları
+    default: false
+  
+  discordlite.moderator:
+    description: Moderatör avantajları
+    default: false
+    children:
+      - discordlite.admin.info
+      - discordlite.admin.logs

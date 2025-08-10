@@ -1,0 +1,336 @@
+# DiscordLite Türkçe Mesaj Dosyası
+# Version: 1.0.0
+
+# ===== GENEL MESAJLAR =====
+general:
+  prefix: "&7[&bDiscordLite&7]&r "
+  success: "&a✓ {message}"
+  error: "&c✗ {message}"
+  warning: "&e⚠ {message}"
+  info: "&7ℹ {message}"
+  loading: "&7⌛ {message}"
+  unknown_error: "Bilinmeyen bir hata oluştu."
+  command_success: "Komut başarıyla çalıştırıldı!"
+  invalid_syntax: "Geçersiz komut kullanımı! Kullanım: {usage}"
+  no_permission: "Bu komutu kullanma yetkiniz yok!"
+  player_only: "Bu komut sadece oyuncular tarafından kullanılabilir!"
+  console_only: "Bu komut sadece konsoldan kullanılabilir!"
+  player_not_found: "Oyuncu bulunamadı: {player}"
+  player_not_online: "Oyuncu çevrimiçi değil: {player}"
+  cooldown: "Çok hızlı! {time} saniye bekleyin."
+  rate_limited: "Çok fazla istek! Lütfen bekleyin."
+  maintenance_mode: "Sistem bakımda. Lütfen daha sonra tekrar deneyin."
+
+# ===== HESAP BAĞLAMA =====
+linking:
+  already_linked: "Bu Minecraft hesabı zaten bir Discord hesabı ile eşlenmiş!"
+  discord_already_linked: "Bu Discord hesabı zaten başka bir Minecraft hesabı ile eşlenmiş!"
+  link_success: "Discord hesabınız başarıyla eşlendi! 🎉"
+  link_failed: "Hesap eşleme başarısız oldu. Lütfen tekrar deneyin."
+  unlink_success: "Hesap eşlemesi başarıyla kaldırıldı."
+  unlink_failed: "Hesap eşlemesi kaldırılamadı."
+  not_linked: "Minecraft hesabınız bir Discord hesabı ile eşlenmemiş!"
+  verification_sent: "Discord hesabınıza doğrulama mesajı gönderildi. Lütfen kontrol edin!"
+  verification_timeout: "Doğrulama süresi doldu ({timeout} saniye). Lütfen tekrar deneyin."
+  verification_expired: "Doğrulama kodu süresi dolmuş. Yeni kod alın."
+  verification_invalid: "Geçersiz doğrulama kodu!"
+  verification_success: "Doğrulama başarılı! Hoş geldiniz."
+  verification_cancelled: "Doğrulama iptal edildi."
+  link_cooldown: "Çok hızlı! {time} saniye bekleyip tekrar deneyin."
+  max_attempts_reached: "Günlük maksimum deneme sayısına ulaştınız. Yarın tekrar deneyin."
+  linking_disabled: "Hesap eşleme şu anda devre dışı."
+
+# ===== MODERN DOĞRULAMA MESAJLARI =====
+verify_modern:
+  # Başarı Mesajları
+  started:
+    title: "╭─────────────────────────────────────────╮\n│ 🔗 DISCORD HESAP DOĞRULAMA             │\n├─────────────────────────────────────────┤"
+    content: "│ &#00FF88Doğrulama kodunuz: &#F1F2F6{code}            │\n│                                         │\n│ &#74B9FF📱 Discord sunucusuna gidin               │\n│ &#74B9FF🎯 Doğrulama butonuna tıklayın            │\n│ &#74B9FF⌨️  Bu kodu girin ve onaylayın             │\n│                                         │\n│ &#FFB347⏱️ Süre: 5 dakika                        │"
+    footer: "╰─────────────────────────────────────────╯"
+  
+  success:
+    header: "▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄\n█ ✅ HESAP EŞLEMESİ BAŞARILI!         █\n▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀"
+    content: "&#00FF88🎉 Discord hesabınız başarıyla eşlendi!\n&#74B9FF💡 Artık 2FA özelliğini açabilirsiniz\n&#A29BFE📝 Komut: /discordlite 2fa enable"
+  
+  # Hata Mesajları
+  already_linked:
+    title: "╭─────────────────────────────────────────╮\n│ ❌ HESAP ZATEN EŞLENMİŞ                │\n├─────────────────────────────────────────┤"
+    content: "│ Bu Minecraft hesabı zaten bir Discord  │\n│ hesabı ile eşlenmiş durumda.            │\n│                                         │\n│ 💡 Eşlemeyi kaldırmak için:             │\n│    /discordlite unlink                  │"
+    footer: "╰─────────────────────────────────────────╯"
+  
+  cooldown:
+    content: "► ⏱️ BEKLE | Bir sonraki deneme için &#FFB347{time}s &#F1F2F6bekleyin"
+  
+  timeout:
+    title: "╭─────────────────────────────────────────╮\n│ ⏱️ DOĞRULAMA SÜRESİ DOLDU               │\n├─────────────────────────────────────────┤"
+    content: "│ Doğrulama kodunuzun süresi doldu.       │\n│                                         │\n│ 🔄 Yeniden denemek için:                │\n│    /verify                              │"
+    footer: "╰─────────────────────────────────────────╯"
+  
+  # İlerleme Mesajları
+  progress:
+    step_1: "► 📱 ADIM 1 | Discord sunucusuna girin"
+    step_2: "► 🎯 ADIM 2 | Doğrulama butonuna tıklayın"
+    step_3: "► ⌨️ ADIM 3 | Kodu girin: &#00FF88{code}"
+    waiting: "► ⏳ BEKLE | Discord'dan onay bekleniyor..."
+
+# ===== MODERN EŞLEMESİ KALDIRMA MESAJLARI =====
+unlink_modern:
+  success:
+    header: "▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄\n█ ✅ HESAP EŞLEMESİ KALDIRILDI       █\n▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀"
+    content: "&#00FF88💔 Discord hesap eşlemeniz kaldırıldı\n&#74B9FF🔒 2FA otomatik olarak kapatıldı"
+
+# ===== 2FA SİSTEMİ =====
+twofa:
+  enabled: "2FA başarıyla açıldı! Artık giriş yaparken Discord onayı gerekecek."
+  disabled: "2FA kapatıldı. Artık giriş yaparken Discord onayı gerekmeyecek."
+  already_enabled: "2FA zaten açık!"
+  already_disabled: "2FA zaten kapalı!"
+  required: "Bu sunucuya giriş için 2FA zorunludur!"
+  required_for_ops: "Operatör yetkisi için 2FA zorunludur!"
+  required_for_permission: "{permission} yetkisi için 2FA zorunludur!"
+  not_linked_error: "2FA kullanmak için önce Discord hesabınızı eşleyin!"
+  verification_required: "Discord hesabınızı kontrol edin ve giriş için onaylayın!"
+  verification_pending: "Doğrulama bekleniyor... Discord hesabınızı kontrol edin."
+  verification_approved: "Giriş onaylandı! Hoş geldiniz, {player}!"
+  verification_denied: "Giriş reddedildi. Sunucudan çıkarılıyorsunuz."
+  verification_timeout_kick: "Doğrulama süresi doldu. Sunucudan çıkarılıyorsunuz."
+  frozen_message: "2FA doğrulaması için dondurulunsuz. Discord hesabınızı kontrol edin."
+  movement_blocked: "2FA doğrulaması tamamlanana kadar hareket edemezsiniz!"
+  action_blocked: "2FA doğrulaması tamamlanana kadar bu işlemi yapamazsınız!"
+
+# ===== IP BAN SİSTEMİ =====
+ip_ban:
+  banned: "IP adresiniz banlandı! Sebep: {reason}"
+  ban_success: "IP adresi başarıyla banlandı: {ip}"
+  ban_failed: "IP adresi banlanamadı: {ip}"
+  unban_success: "IP adresi banı kaldırıldı: {ip}"
+  unban_failed: "IP adresi banı kaldırılamadı: {ip}"
+  not_banned: "Bu IP adresi banlanmamış: {ip}"
+  already_banned: "Bu IP adresi zaten banlanmış: {ip}"
+  ban_expired: "IP ban süreniz doldu. Hoş geldiniz!"
+  whitelist_added: "IP adresi beyaz listeye eklendi: {ip}"
+  whitelist_removed: "IP adresi beyaz listeden kaldırıldı: {ip}"
+  auto_ban_warning: "⚠️ Otomatik güvenlik sistemi tarafından banlandınız!"
+  permanent_ban: "Kalıcı olarak banlandınız."
+  temporary_ban: "{duration} süreliğine banlandınız."
+  failed_attempts: "Çok fazla başarısız deneme! IP adresiniz geçici olarak banlandı."
+
+# ===== GÜVENLİK SİSTEMİ =====
+security:
+  login_success: "Başarılı giriş kaydedildi."
+  login_failed: "Başarısız giriş denemesi tespit edildi!"
+  suspicious_activity: "Şüpheli aktivite tespit edildi: {activity}"
+  threat_level_low: "Tehdit seviyesi: Düşük"
+  threat_level_medium: "Tehdit seviyesi: Orta"
+  threat_level_high: "Tehdit seviyesi: Yüksek"
+  threat_level_critical: "Tehdit seviyesi: Kritik"
+  auto_security_triggered: "Otomatik güvenlik önlemleri aktifleştirildi!"
+  brute_force_detected: "Brute force saldırısı tespit edildi!"
+  anomaly_detected: "Anormal aktivite tespit edildi: {type}"
+  unauthorized_access: "Yetkisiz erişim denemesi: {action}"
+  permission_denied: "Yetki reddedildi: {permission}"
+  security_alert: "🚨 GÜVENLİK UYARISI: {message}"
+
+# ===== ADMIN KOMUTLARI =====
+admin:
+  reload_success: "Konfigürasyon başarıyla yeniden yüklendi!"
+  reload_failed: "Konfigürasyon yeniden yüklenemedi: {error}"
+  reset_success: "Plugin başarıyla sıfırlandı!"
+  reset_failed: "Plugin sıfırlanamadı: {error}"
+  backup_success: "Yedekleme başarıyla tamamlandı!"
+  backup_failed: "Yedekleme başarısız: {error}"
+  maintenance_enabled: "Bakım modu açıldı."
+  maintenance_disabled: "Bakım modu kapatıldı."
+  debug_enabled: "Debug modu açıldı."
+  debug_disabled: "Debug modu kapatıldı."
+  stats_header: "=== DiscordLite İstatistikleri ==="
+  stats_players: "Bağlı oyuncular: {linked}/{total}"
+  stats_security: "Güvenlik olayları: {events} (Kritik: {critical})"
+  stats_bans: "Aktif IP banları: {bans}"
+  stats_uptime: "Çalışma süresi: {uptime}"
+  logs_cleared: "Loglar temizlendi: {count} adet"
+  cache_cleared: "Önbellek temizlendi."
+
+# ===== PERMISSION SİSTEMİ =====
+permissions:
+  sync_success: "İzinler başarıyla senkronize edildi!"
+  sync_failed: "İzin senkronizasyonu başarısız: {error}"
+  role_added: "Rol eklendi: {role}"
+  role_removed: "Rol kaldırıldı: {role}"
+  permission_granted: "İzin verildi: {permission}"
+  permission_revoked: "İzin kaldırıldı: {permission}"
+  group_changed: "Grup değiştirildi: {old} → {new}"
+  rank_updated: "Rütbe güncellendi: {rank}"
+  sync_disabled: "İzin senkronizasyonu devre dışı."
+
+# ===== VERİTABANI =====
+database:
+  connected: "Veritabanına başarıyla bağlanıldı!"
+  disconnected: "Veritabanı bağlantısı kesildi."
+  connection_failed: "Veritabanı bağlantısı başarısız: {error}"
+  migration_success: "Veritabanı güncellemesi tamamlandı!"
+  migration_failed: "Veritabanı güncellemesi başarısız: {error}"
+  backup_created: "Veritabanı yedeği oluşturuldu: {file}"
+  backup_restored: "Veritabanı yedeği geri yüklendi: {file}"
+  cleanup_completed: "Veritabanı temizliği tamamlandı."
+  optimization_completed: "Veritabanı optimizasyonu tamamlandı."
+
+# ===== DISCORD MESAJLARI =====
+discord:
+  bot_ready: "Discord botu hazır!"
+  bot_disconnected: "Discord botu bağlantısı kesildi."
+  guild_not_found: "Discord sunucusu bulunamadı!"
+  channel_not_found: "Kanal bulunamadı: {channel}"
+  role_not_found: "Rol bulunamadı: {role}"
+  user_not_found: "Kullanıcı bulunamadı: {user}"
+  message_sent: "Discord mesajı gönderildi."
+  message_failed: "Discord mesajı gönderilemedi: {error}"
+  slash_command_registered: "Slash komutları kayıt edildi!"
+  button_interaction: "Buton etkileşimi: {button}"
+  embed_created: "Embed mesajı oluşturuldu."
+
+# ===== OYUNCU OLAYLARI =====
+player:
+  joined: "{player} sunucuya katıldı!"
+  left: "{player} sunucudan ayrıldı!"
+  first_join: "{player} sunucuya ilk kez katıldı! Hoş geldin!"
+  welcome_message: "Hoş geldin {player}! Discord hesabını eşlemek için /link komutunu kullan."
+  link_reminder: "Güvenlik için Discord hesabını eşlemeni öneririz. /link komutunu kullan."
+  banned: "{player} banlandı: {reason}"
+  kicked: "{player} sunucudan atıldı: {reason}"
+  muted: "{player} susturuldu: {reason}"
+  unmuted: "{player} susturması kaldırıldı."
+
+# ===== KOMUT AÇIKLAMALARI =====
+commands:
+  link:
+    description: "Discord hesabınızı Minecraft hesabınızla eşleyin"
+    usage: "/discordlite link"
+  unlink:
+    description: "Discord hesap eşlemesini kaldırın"
+    usage: "/discordlite unlink [oyuncu]"
+  twofa:
+    description: "2FA ayarlarınızı yönetin"
+    usage: "/discordlite twofa <enable|disable>"
+  info:
+    description: "Hesap bilgilerinizi görüntüleyin"
+    usage: "/discordlite info [oyuncu]"
+  reload:
+    description: "Plugin konfigürasyonunu yeniden yükleyin"
+    usage: "/discordlite reload"
+  reset:
+    description: "Plugin verilerini sıfırlayın"
+    usage: "/discordlite reset"
+  ban:
+    description: "IP adresi banlayın"
+    usage: "/discordlite ban <ip> [sebep] [süre]"
+  unban:
+    description: "IP adresi banını kaldırın"
+    usage: "/discordlite unban <ip>"
+  logs:
+    description: "Güvenlik loglarını görüntüleyin"
+    usage: "/discordlite logs [sayfa] [filtre]"
+  stats:
+    description: "Plugin istatistiklerini görüntüleyin"
+    usage: "/discordlite stats"
+
+# ===== ZAMAN İFADELERİ =====
+time:
+  second: "saniye"
+  seconds: "saniye"
+  minute: "dakika"
+  minutes: "dakika"
+  hour: "saat"
+  hours: "saat"
+  day: "gün"
+  days: "gün"
+  week: "hafta"
+  weeks: "hafta"
+  month: "ay"
+  months: "ay"
+  year: "yıl"
+  years: "yıl"
+  permanent: "kalıcı"
+  unknown: "bilinmiyor"
+  never: "hiçbir zaman"
+  now: "şimdi"
+  ago: "önce"
+  remaining: "kalan"
+
+# ===== LOG MESAJLARI =====
+logs:
+  header: "=== Güvenlik Logları ==="
+  footer: "Sayfa {page}/{total} | Toplam: {count} log"
+  empty: "Gösterilecek log bulunamadı."
+  entry: "[{time}] {type}: {message}"
+  filtered: "{filter} filtresi uygulandı."
+  export_success: "Loglar dışa aktarıldı: {file}"
+  export_failed: "Log dışa aktarma başarısız: {error}"
+
+# ===== HATA MESAJLARI =====
+errors:
+  plugin_not_loaded: "Plugin henüz yüklenmedi!"
+  config_invalid: "Geçersiz konfigürasyon: {error}"
+  discord_api_error: "Discord API hatası: {error}"
+  database_error: "Veritabanı hatası: {error}"
+  network_error: "Ağ hatası: {error}"
+  file_error: "Dosya hatası: {error}"
+  permission_error: "Yetki hatası: {error}"
+  validation_error: "Doğrulama hatası: {error}"
+  timeout_error: "Zaman aşımı hatası"
+  unknown_command: "Bilinmeyen komut: {command}"
+  too_many_arguments: "Çok fazla argüman!"
+  not_enough_arguments: "Yeterli argüman yok!"
+  invalid_number: "Geçersiz sayı: {value}"
+  invalid_boolean: "Geçersiz boolean değer: {value}"
+  invalid_uuid: "Geçersiz UUID: {value}"
+
+# ===== BAŞARI MESAJLARI =====
+success:
+  operation_completed: "İşlem başarıyla tamamlandı!"
+  data_saved: "Veriler kaydedildi."
+  data_loaded: "Veriler yüklendi."
+  cache_updated: "Önbellek güncellendi."
+  sync_completed: "Senkronizasyon tamamlandı."
+  export_completed: "Dışa aktarma tamamlandı."
+  import_completed: "İçe aktarma tamamlandı."
+  validation_passed: "Doğrulama başarılı."
+  connection_established: "Bağlantı kuruldu."
+  task_scheduled: "Görev zamanlandı."
+
+# ===== UYARI MESAJLARI =====
+warnings:
+  experimental_feature: "Bu özellik deneyseldir!"
+  deprecated_feature: "Bu özellik kullanımdan kaldırılmıştır!"
+  performance_warning: "Performans uyarısı: {message}"
+  memory_warning: "Bellek uyarısı: {usage}% kullanımda"
+  connection_unstable: "Bağlantı kararsız!"
+  rate_limit_warning: "Rate limit yaklaşıyor!"
+  quota_warning: "Kota uyarısı: %{percentage} kullanıldı"
+  maintenance_soon: "Yakında bakım: {time}"
+  update_available: "Yeni sürüm mevcut: {version}"
+  config_outdated: "Konfigürasyon dosyası güncel değil!"
+
+# ===== ONAY MESAJLARI =====
+confirmations:
+  are_you_sure: "Emin misiniz? Bu işlem geri alınamaz!"
+  confirm_reset: "Tüm verileri sıfırlamak istediğinizden emin misiniz?"
+  confirm_delete: "{item} öğesini silmek istediğinizden emin misiniz?"
+  confirm_unlink: "Hesap eşlemesini kaldırmak istediğinizden emin misiniz?"
+  confirm_ban: "{target} hedefini banlamak istediğinizden emin misiniz?"
+  type_confirm: "Onaylamak için 'CONFIRM' yazın:"
+  operation_cancelled: "İşlem iptal edildi."
+  confirmation_timeout: "Onay süresi doldu, işlem iptal edildi."
+
+# ===== BİLGİLENDİRME MESAJLARI =====
+info:
+  plugin_version: "DiscordLite v{version}"
+  author: "Yapımcı: {author}"
+  description: "Discord entegrasyonu ile 2FA güvenlik sistemi"
+  website: "Web sitesi: {url}"
+  support: "Destek: {contact}"
+  documentation: "Dokümantasyon: {url}"
+  source_code: "Kaynak kod: {url}"
+  license: "Lisans: {license}"
+  java_version: "Java versiyonu: {version}"
+  server_version: "Sunucu versiyonu: {version}"

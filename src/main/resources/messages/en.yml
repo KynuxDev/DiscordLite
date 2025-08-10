@@ -1,0 +1,297 @@
+# DiscordLite English Message File
+# Version: 1.0.0
+
+# ===== GENERAL MESSAGES =====
+general:
+  prefix: "&7[&bDiscordLite&7]&r "
+  success: "&a✓ {message}"
+  error: "&c✗ {message}"
+  warning: "&e⚠ {message}"
+  info: "&7ℹ {message}"
+  loading: "&7⌛ {message}"
+  unknown_error: "An unknown error occurred."
+  command_success: "Command executed successfully!"
+  invalid_syntax: "Invalid command syntax! Usage: {usage}"
+  no_permission: "You don't have permission to use this command!"
+  player_only: "This command can only be used by players!"
+  console_only: "This command can only be used from console!"
+  player_not_found: "Player not found: {player}"
+  player_not_online: "Player is not online: {player}"
+  cooldown: "Too fast! Wait {time} seconds."
+  rate_limited: "Too many requests! Please wait."
+  maintenance_mode: "System is under maintenance. Please try again later."
+
+# ===== ACCOUNT LINKING =====
+linking:
+  already_linked: "This Minecraft account is already linked to a Discord account!"
+  discord_already_linked: "This Discord account is already linked to another Minecraft account!"
+  link_success: "Your Discord account has been successfully linked! 🎉"
+  link_failed: "Account linking failed. Please try again."
+  unlink_success: "Account linking has been successfully removed."
+  unlink_failed: "Account unlinking failed."
+  not_linked: "Your Minecraft account is not linked to a Discord account!"
+  verification_sent: "Verification message sent to your Discord account. Please check!"
+  verification_timeout: "Verification timed out ({timeout} seconds). Please try again."
+  verification_expired: "Verification code has expired. Get a new code."
+  verification_invalid: "Invalid verification code!"
+  verification_success: "Verification successful! Welcome."
+  verification_cancelled: "Verification cancelled."
+  link_cooldown: "Too fast! Wait {time} seconds and try again."
+  max_attempts_reached: "Daily maximum attempt limit reached. Try again tomorrow."
+  linking_disabled: "Account linking is currently disabled."
+
+# ===== 2FA SYSTEM =====
+twofa:
+  enabled: "2FA successfully enabled! Discord confirmation will now be required when logging in."
+  disabled: "2FA disabled. Discord confirmation will no longer be required when logging in."
+  already_enabled: "2FA is already enabled!"
+  already_disabled: "2FA is already disabled!"
+  required: "2FA is required to enter this server!"
+  required_for_ops: "2FA is required for operator privileges!"
+  required_for_permission: "2FA is required for {permission} permission!"
+  not_linked_error: "Link your Discord account first to use 2FA!"
+  verification_required: "Check your Discord account and approve the login!"
+  verification_pending: "Verification pending... Check your Discord account."
+  verification_approved: "Login approved! Welcome, {player}!"
+  verification_denied: "Login denied. You are being kicked from the server."
+  verification_timeout_kick: "Verification timed out. You are being kicked from the server."
+  frozen_message: "You are frozen for 2FA verification. Check your Discord account."
+  movement_blocked: "You cannot move until 2FA verification is complete!"
+  action_blocked: "You cannot perform this action until 2FA verification is complete!"
+
+# ===== IP BAN SYSTEM =====
+ip_ban:
+  banned: "Your IP address has been banned! Reason: {reason}"
+  ban_success: "IP address successfully banned: {ip}"
+  ban_failed: "Failed to ban IP address: {ip}"
+  unban_success: "IP address ban removed: {ip}"
+  unban_failed: "Failed to remove IP address ban: {ip}"
+  not_banned: "This IP address is not banned: {ip}"
+  already_banned: "This IP address is already banned: {ip}"
+  ban_expired: "Your IP ban has expired. Welcome!"
+  whitelist_added: "IP address added to whitelist: {ip}"
+  whitelist_removed: "IP address removed from whitelist: {ip}"
+  auto_ban_warning: "⚠️ You have been banned by the automatic security system!"
+  permanent_ban: "You have been permanently banned."
+  temporary_ban: "You have been banned for {duration}."
+  failed_attempts: "Too many failed attempts! Your IP address has been temporarily banned."
+
+# ===== SECURITY SYSTEM =====
+security:
+  login_success: "Successful login recorded."
+  login_failed: "Failed login attempt detected!"
+  suspicious_activity: "Suspicious activity detected: {activity}"
+  threat_level_low: "Threat level: Low"
+  threat_level_medium: "Threat level: Medium"
+  threat_level_high: "Threat level: High"
+  threat_level_critical: "Threat level: Critical"
+  auto_security_triggered: "Automatic security measures activated!"
+  brute_force_detected: "Brute force attack detected!"
+  anomaly_detected: "Abnormal activity detected: {type}"
+  unauthorized_access: "Unauthorized access attempt: {action}"
+  permission_denied: "Permission denied: {permission}"
+  security_alert: "🚨 SECURITY ALERT: {message}"
+
+# ===== ADMIN COMMANDS =====
+admin:
+  reload_success: "Configuration successfully reloaded!"
+  reload_failed: "Failed to reload configuration: {error}"
+  reset_success: "Plugin successfully reset!"
+  reset_failed: "Failed to reset plugin: {error}"
+  backup_success: "Backup completed successfully!"
+  backup_failed: "Backup failed: {error}"
+  maintenance_enabled: "Maintenance mode enabled."
+  maintenance_disabled: "Maintenance mode disabled."
+  debug_enabled: "Debug mode enabled."
+  debug_disabled: "Debug mode disabled."
+  stats_header: "=== DiscordLite Statistics ==="
+  stats_players: "Linked players: {linked}/{total}"
+  stats_security: "Security events: {events} (Critical: {critical})"
+  stats_bans: "Active IP bans: {bans}"
+  stats_uptime: "Uptime: {uptime}"
+  logs_cleared: "Logs cleared: {count} entries"
+  cache_cleared: "Cache cleared."
+
+# ===== PERMISSION SYSTEM =====
+permissions:
+  sync_success: "Permissions successfully synchronized!"
+  sync_failed: "Permission synchronization failed: {error}"
+  role_added: "Role added: {role}"
+  role_removed: "Role removed: {role}"
+  permission_granted: "Permission granted: {permission}"
+  permission_revoked: "Permission revoked: {permission}"
+  group_changed: "Group changed: {old} → {new}"
+  rank_updated: "Rank updated: {rank}"
+  sync_disabled: "Permission synchronization is disabled."
+
+# ===== DATABASE =====
+database:
+  connected: "Successfully connected to database!"
+  disconnected: "Database connection lost."
+  connection_failed: "Database connection failed: {error}"
+  migration_success: "Database migration completed!"
+  migration_failed: "Database migration failed: {error}"
+  backup_created: "Database backup created: {file}"
+  backup_restored: "Database backup restored: {file}"
+  cleanup_completed: "Database cleanup completed."
+  optimization_completed: "Database optimization completed."
+
+# ===== DISCORD MESSAGES =====
+discord:
+  bot_ready: "Discord bot ready!"
+  bot_disconnected: "Discord bot disconnected."
+  guild_not_found: "Discord server not found!"
+  channel_not_found: "Channel not found: {channel}"
+  role_not_found: "Role not found: {role}"
+  user_not_found: "User not found: {user}"
+  message_sent: "Discord message sent."
+  message_failed: "Failed to send Discord message: {error}"
+  slash_command_registered: "Slash commands registered!"
+  button_interaction: "Button interaction: {button}"
+  embed_created: "Embed message created."
+
+# ===== PLAYER EVENTS =====
+player:
+  joined: "{player} joined the server!"
+  left: "{player} left the server!"
+  first_join: "{player} joined the server for the first time! Welcome!"
+  welcome_message: "Welcome {player}! Use /link command to link your Discord account."
+  link_reminder: "We recommend linking your Discord account for security. Use /link command."
+  banned: "{player} was banned: {reason}"
+  kicked: "{player} was kicked from server: {reason}"
+  muted: "{player} was muted: {reason}"
+  unmuted: "{player} was unmuted."
+
+# ===== COMMAND DESCRIPTIONS =====
+commands:
+  link:
+    description: "Link your Discord account with your Minecraft account"
+    usage: "/discordlite link"
+  unlink:
+    description: "Remove Discord account linking"
+    usage: "/discordlite unlink [player]"
+  twofa:
+    description: "Manage your 2FA settings"
+    usage: "/discordlite twofa <enable|disable>"
+  info:
+    description: "View your account information"
+    usage: "/discordlite info [player]"
+  reload:
+    description: "Reload plugin configuration"
+    usage: "/discordlite reload"
+  reset:
+    description: "Reset plugin data"
+    usage: "/discordlite reset"
+  ban:
+    description: "Ban an IP address"
+    usage: "/discordlite ban <ip> [reason] [duration]"
+  unban:
+    description: "Remove IP address ban"
+    usage: "/discordlite unban <ip>"
+  logs:
+    description: "View security logs"
+    usage: "/discordlite logs [page] [filter]"
+  stats:
+    description: "View plugin statistics"
+    usage: "/discordlite stats"
+
+# ===== TIME EXPRESSIONS =====
+time:
+  second: "second"
+  seconds: "seconds"
+  minute: "minute"
+  minutes: "minutes"
+  hour: "hour"
+  hours: "hours"
+  day: "day"
+  days: "days"
+  week: "week"
+  weeks: "weeks"
+  month: "month"
+  months: "months"
+  year: "year"
+  years: "years"
+  permanent: "permanent"
+  unknown: "unknown"
+  never: "never"
+  now: "now"
+  ago: "ago"
+  remaining: "remaining"
+
+# ===== LOG MESSAGES =====
+logs:
+  header: "=== Security Logs ==="
+  footer: "Page {page}/{total} | Total: {count} logs"
+  empty: "No logs to display."
+  entry: "[{time}] {type}: {message}"
+  filtered: "{filter} filter applied."
+  export_success: "Logs exported: {file}"
+  export_failed: "Log export failed: {error}"
+
+# ===== ERROR MESSAGES =====
+errors:
+  plugin_not_loaded: "Plugin is not loaded yet!"
+  config_invalid: "Invalid configuration: {error}"
+  discord_api_error: "Discord API error: {error}"
+  database_error: "Database error: {error}"
+  network_error: "Network error: {error}"
+  file_error: "File error: {error}"
+  permission_error: "Permission error: {error}"
+  validation_error: "Validation error: {error}"
+  timeout_error: "Timeout error"
+  unknown_command: "Unknown command: {command}"
+  too_many_arguments: "Too many arguments!"
+  not_enough_arguments: "Not enough arguments!"
+  invalid_number: "Invalid number: {value}"
+  invalid_boolean: "Invalid boolean value: {value}"
+  invalid_uuid: "Invalid UUID: {value}"
+
+# ===== SUCCESS MESSAGES =====
+success:
+  operation_completed: "Operation completed successfully!"
+  data_saved: "Data saved."
+  data_loaded: "Data loaded."
+  cache_updated: "Cache updated."
+  sync_completed: "Synchronization completed."
+  export_completed: "Export completed."
+  import_completed: "Import completed."
+  validation_passed: "Validation successful."
+  connection_established: "Connection established."
+  task_scheduled: "Task scheduled."
+
+# ===== WARNING MESSAGES =====
+warnings:
+  experimental_feature: "This feature is experimental!"
+  deprecated_feature: "This feature is deprecated!"
+  performance_warning: "Performance warning: {message}"
+  memory_warning: "Memory warning: {usage}% usage"
+  connection_unstable: "Connection unstable!"
+  rate_limit_warning: "Rate limit approaching!"
+  quota_warning: "Quota warning: {percentage}% used"
+  maintenance_soon: "Maintenance soon: {time}"
+  update_available: "Update available: {version}"
+  config_outdated: "Configuration file is outdated!"
+
+# ===== CONFIRMATION MESSAGES =====
+confirmations:
+  are_you_sure: "Are you sure? This action cannot be undone!"
+  confirm_reset: "Are you sure you want to reset all data?"
+  confirm_delete: "Are you sure you want to delete {item}?"
+  confirm_unlink: "Are you sure you want to remove account linking?"
+  confirm_ban: "Are you sure you want to ban {target}?"
+  type_confirm: "Type 'CONFIRM' to proceed:"
+  operation_cancelled: "Operation cancelled."
+  confirmation_timeout: "Confirmation timed out, operation cancelled."
+
+# ===== INFORMATION MESSAGES =====
+info:
+  plugin_version: "DiscordLite v{version}"
+  author: "Author: {author}"
+  description: "2FA security system with Discord integration"
+  website: "Website: {url}"
+  support: "Support: {contact}"
+  documentation: "Documentation: {url}"
+  source_code: "Source code: {url}"
+  license: "License: {license}"
+  java_version: "Java version: {version}"
+  server_version: "Server version: {version}"
