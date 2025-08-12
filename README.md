@@ -1,4 +1,4 @@
-# DiscordLite
+# DiscordLite 
 
 [![Minecraft](https://img.shields.io/badge/Minecraft-1.19+-green)](https://minecraft.net)
 [![Discord](https://img.shields.io/badge/Discord-JDA%205.0.0-blue)](https://github.com/DV8FromTheWorld/JDA)
